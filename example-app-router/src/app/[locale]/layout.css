@@ -1,0 +1,17 @@
+:root {
+    --main-bg-color: #eaeaea;
+    --main-font-family:'system-ui';
+    --nav-selected-bg: #fff;
+    --main-color: #f5a000;
+    --transparent-bg:#ffffff80;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+
+.hide{
+    display: none !important;
+}

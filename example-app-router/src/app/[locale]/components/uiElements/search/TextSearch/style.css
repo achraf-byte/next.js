@@ -1,0 +1,17 @@
+.search-text{
+    font-size: 15px;
+    font-family: lato;
+    padding: 8px 18px;
+    text-align: center;
+    font-family: var(--main-font-family);
+    border: unset!important;
+    border-radius: 8px;
+    font-style: italic;
+    cursor: pointer;
+}
+img:before{
+    background-image: url(https://preprod-static.07zr.lu/bundles/frontzrtheme/images/pictoMat.jpg)!important;
+}
+.search-text:focus{
+    outline: unset;
+}

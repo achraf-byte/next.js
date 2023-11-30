@@ -1,0 +1,1 @@
+export const GET_BRANDS_URL = 'http://localhost:8000/brands'

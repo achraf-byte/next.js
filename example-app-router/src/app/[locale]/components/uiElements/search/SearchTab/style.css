@@ -1,0 +1,15 @@
+.SearchTab{
+    background-color: white;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px;
+    cursor: pointer;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+
+}
+
+.SearchTab.selected{
+    background-color: var(--main-color) !important;
+    color: black !important;
+}

@@ -1,0 +1,38 @@
+.bg-container{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://preprod-static.07zr.lu/bundles/frontzrtheme/public_responsive_sparepart/images/bandeauxPiece.png)!important;
+    background-position: center bottom !important;
+    min-height: 225px;
+    background-size: cover;
+}
+.container{
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tabs{
+    display: flex;
+    justify-content: center;
+    gap:10px;
+    width: 100%;
+    font-family: var(--main-font-family);
+    border-bottom: 3px solid var(--main-color);
+}
+
+.search-el-cont{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--transparent-bg);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}

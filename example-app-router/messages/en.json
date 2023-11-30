@@ -1,0 +1,25 @@
+{
+  "home": {
+    "home" : "home-en"
+  },
+  "navigation": {
+    "home" : "home",
+    "rechrech" : "recherch",
+    "piece-search-url" : "search-spare-parts",
+    "pneux-search-url" : "search-tyres",
+    "piece-search" : "Search spare parts",
+    "pneux-search" : "Search tyres"
+  },
+  "search-piece" :{
+    "titel" : "search-spare-parts",
+    "search-referece" : "Recherche rapide parréférence en",
+    "search-immat" : "Recherche parIMMAT/VIN en",
+    "search-vh" : "Recherche parvéhicule en"
+  },
+  "search-pneux" :{
+    "titel" : "search-tyres"
+  },
+  "login" :{
+    "login-url" : "login"
+  }
+}

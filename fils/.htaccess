@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule ^login$ index.php?action=loginAction [L]
+RewriteRule ^getBrandes$ index.php?action=getBrandesAction [L]

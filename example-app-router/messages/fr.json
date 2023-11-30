@@ -1,0 +1,30 @@
+{
+  "home": {
+    "home" : "home fr"
+  },
+  "navigation": {
+    "home" : "home fr",
+    "rechrech" : "recherch fr",
+    "piece-search-url" : "recherche-pdmsparepart",
+    "pneux-search-url" : "recherche-pneux",
+    "piece-search" : "recherch piece",
+    "pneux-search" : "recherch pneux"
+  },
+  "search-piece" :{
+    "titel" : "recherche-pièces",
+    "search-referece" :  "Recherche rapide par référence",
+    "search-immat" : "Recherche parIMMAT/VIN",
+    "search-vh" :"Recherche par véhicule",
+    "search-ref-placeholder" : "Référence de la pièce",
+    "search-immat-placeholder" : "ex : DJ-325-XX",
+    "brand":"Choisir la marque...",
+    "model":"Choisir le modèle...",
+    "type":"Choisir le type...."
+  },
+  "search-pneux" :{
+    "titel" : "recherche-tyres"
+  },
+  "login" :{
+    "login-url" : "connexion"
+  }
+}

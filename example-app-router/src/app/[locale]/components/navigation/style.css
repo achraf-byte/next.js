@@ -1,0 +1,16 @@
+.navigation{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    background-color:  var(--main-bg-color);
+    border-bottom: 1px dashed black;
+}
+.head{
+    display: flex;
+    padding-top: 90px;
+    padding-bottom: 10px;
+    justify-content: center;
+   background-color:  var(--main-bg-color);
+   
+   border-bottom: 1px dashed black;
+}
