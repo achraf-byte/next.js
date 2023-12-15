@@ -14,7 +14,10 @@
     "titel" : "search-spare-parts",
     "search-referece" : "Recherche rapide parréférence en",
     "search-immat" : "Recherche parIMMAT/VIN en",
-    "search-vh" : "Recherche parvéhicule en"
+    "search-vh" : "Recherche parvéhicule en",
+    "ref" : "referance",
+    "immate" : "immate",
+    "vh" : "vh"
   },
   "search-pneux" :{
     "titel" : "search-tyres"

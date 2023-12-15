@@ -19,7 +19,10 @@
     "search-immat-placeholder" : "ex : DJ-325-XX",
     "brand":"Choisir la marque...",
     "model":"Choisir le modèle...",
-    "type":"Choisir le type...."
+    "type":"Choisir le type....",
+    "ref" : "referance",
+    "immate" : "immate",
+    "vh" : "vh"
   },
   "search-pneux" :{
     "titel" : "recherche-tyres"

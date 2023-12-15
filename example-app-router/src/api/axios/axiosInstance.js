@@ -13,7 +13,6 @@ async function fetchMethod(
 ) {
   const headersInstance = cookies();
   const token = headersInstance.get('authorization');
-  console.log(token.value);
 
   const fetchMethod = await fetch(params.url, {
     method: params.method,
@@ -28,17 +27,15 @@ async function fetchMethod(
     }),
   });
 
-  // console.log(fetchMethod.body);
-
+  
   if (fetchMethod.ok) {
     const clonedResponse = fetchMethod.clone();
-    
     const responseBody = await clonedResponse.text();
-    if (responseBody !== 'Not authenticated.') {
-      console.log(responseBody)
+    // console.log(responseBody)
+    if (responseBody !== 'Not authenticated.' && responseBody !== 'Invalid action') {
       var response = JSON.parse(responseBody);
       // var response = await fetchMethod.json();
-
+      
       if (response.token) {
         headersInstance.set('authorization', response.token);
         redirect('/fr/recherche-pdmsparepart');
@@ -47,10 +44,12 @@ async function fetchMethod(
       }
       return response;
     }else{
-      redirect('/fr/connection');
+      if(responseBody == 'Invalid action'){
+      }else{
+        redirect('/fr/connection');
+      }
     }
   } else {
-    console.log('error');
   }
 }
 

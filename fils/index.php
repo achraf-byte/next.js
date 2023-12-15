@@ -12,7 +12,9 @@ include 'headers.php';
 function procedAplication(){
     include './routes.php'; 
     include 'actions/loginAction.php';
-    include 'actions/getBrandesAction.php';
+    include 'actions/getDataSearchVHAction.php';
+    include 'actions/getSeachResultAction.php';
+    include 'actions/getCategoriesAction.php';
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $rawData = file_get_contents('php://input');
         $postData = json_decode($rawData, true);

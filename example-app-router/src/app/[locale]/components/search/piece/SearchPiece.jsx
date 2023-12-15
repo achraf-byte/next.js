@@ -3,39 +3,51 @@
 import SearchTab from "../../uiElements/search/SearchTab/SearchTab";
 import TextSearch from "../../uiElements/search/TextSearch/TextSearch"
 import Search_Vh from "./Search_Vh";
-import { getBrandes } from "../../../../../api/fectchFuntions/index"
-import { use, useState } from "react"
+import SearchButton from "../../uiElements/Button/SearchButton"
+import { getSeachVhData } from "../../../../../api/fectchFuntions/index"
+import { useEffect, useState } from "react"
+
+import { usePathname , useSearchParams } from 'next/navigation';
 import "./style.css"
 
-export default function SearchPiece({lables}) {
-    var [tab , setTab] = useState('ref')
+export default function SearchPiece({lables , locale , params }) {
+    var [tab , setTab] = useState('vh')
     var [data , setData] = useState({})
-
+    var [values , setValues] = useState({})
+    var [searchLink , setSearchLink] = useState('#')
+    
+  const pathname = useSearchParams()
+  console.log(params)
     async function handeTabClick(tab){
-        console.log(11)
         setTab(tab)
-        if(tab == 'vh' && !data.brandes){
-            var brandesData = await getBrandes()
-            setData({ ...data, brandes: brandesData });
+        if(tab == 'vh' && !data.Brands){
+            var brandesData = await getSeachVhData({next_d : 'Brands' , value:null})
+            setData({ ...data, Brands: brandesData });
         }
     }
-    function handleOnChangeRef(){
-
+    useEffect(() => {
+        tab == 'vh' && handeTabClick('vh')
+    }, [tab]);
+    function setSearchLinkFunc(values , locale) {
+        if(typeof values != "undefined"){
+            console.log(values)
+            var base = `/${locale}/${lables['link_base']}/${lables[tab]}/`
+            var values = tab == 'vh' ? Object.values([values.brand, values.model, values.v_id]).join('-') : values[tab]
+            console.log(searchLink)
+            setSearchLink(base + values)
+        }
     }
-    function handleOnChangeImmat(){
-
-    }
-    function handelOnChangeBrande(){
-        
-    }
-    function handelOnChangeModel(){
-
-    }
-    function handelOnChangeType(){
-
+    async function handelOnChange(params){
+        setValues({...values, [params.name] : params.value})
+        setSearchLinkFunc(values , locale)
+        if(params.next_d){
+            var resData = await getSeachVhData(params)
+            setData({ ...data, [params.next_d]: resData });
+        }
     }
     return (
         <div className="bg-container" >
+            <form action="">
             <div className="container">
                 <div className="tabs" >
                     <SearchTab onClick={handeTabClick} currentTab={tab} tab="ref" lable={lables["search-referece"]} ></SearchTab>
@@ -43,17 +55,18 @@ export default function SearchPiece({lables}) {
                     <SearchTab onClick={handeTabClick} currentTab={tab} tab="vh" lable={lables["search-vh-tab"]} ></SearchTab>
                 </div>
                 <div className="search-el-cont" >
-                    {tab == 'ref' && <TextSearch onChange={handleOnChangeRef} placeholder={lables['search-ref-placeholder']}></TextSearch>}
-                    {tab == 'immat' && <TextSearch onChange={handleOnChangeImmat} img={'image.png'} placeholder={lables['search-immat-placeholder']}></TextSearch>}
+                    {tab == 'ref' && <TextSearch onChange={handelOnChange} name="ref" placeholder={lables['search-ref-placeholder']}></TextSearch>}
+                    {tab == 'immat' && <TextSearch onChange={handelOnChange} name="immat" img={'image.png'} placeholder={lables['search-immat-placeholder']}></TextSearch>}
                     {tab == 'vh' && 
                     <Search_Vh
-                        brandes={data?.brandes}
-                        handelOnChangeBrande={handelOnChangeBrande} titels={lables['search-vh']}
-                        handelOnChangeModel={handelOnChangeModel} 
-                        handelOnChangeType={handelOnChangeType}
+                        data={data}
+                        titels={lables['search-vh']}
+                        handelOnChangeDropDown={handelOnChange}
                     ></Search_Vh>}
                 </div>
+                <SearchButton lable={'Recherch'} link={searchLink}></SearchButton>
             </div>
+            </form>
         </div>
   )
 }

@@ -1,0 +1,9 @@
+.submitBtn{
+    background-color: var(--main-color);
+    font-family: var(--main-font-family);
+    margin-top: 30px;
+    padding: 5px 10px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+}

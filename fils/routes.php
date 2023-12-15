@@ -6,7 +6,9 @@
 $routes = [
     'login' => 'loginAction',
     'authVerification' => 'authVerification',
-    'getBrandes' => 'getBrandesAction',
+    'getDataSearchVH' => 'getDataSearchVHAction',
+    'getSeachResult' => 'getSeachResultAction',
+    'getCategories' => 'getCategoriesAction',
 ];
 
 ?>
